@@ -1,0 +1,50 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2rem 0 2rem 2rem;
+  align-items: center;
+  .nav-links {
+    width: 35rem;
+    gap: 1rem;
+    display: flex;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(80px);
+    & > a {
+      color: #fff;
+      font-size: 1.1rem;
+      position: relative;
+
+      &.active {
+        &::after {
+          width: 100%;
+          border: 1px solid #fff;
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 0;
+        width: 0px;
+        transition: 0.4s ease;
+      }
+
+      &:hover {
+        &::after {
+          width: 100%;
+          border: 1px solid #fff;
+        }
+      }
+    }
+
+    @media screen and (max-width: 720px) {
+      width: 31rem;
+    }
+    @media screen and (max-width: 567px) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+.home {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../public/assets/home/background-home-desktop.jpg);
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .text-content {
+    max-width: 440px;
+  }
+  .heading {
+    font-weight: 500;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+  .heading,
+  .heading__big,
+  p {
+    color: #fff;
+  }
+  .heading__big {
+    font-size: 150px;
+    text-transform: uppercase;
+  }
+  .explore {
+    background-color: #fff;
+    border-radius: 50%;
+    width: 275px;
+    height: 275px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .font-light {
+    font-weight: 400;
+  }
+  @media screen and (max-width: 780px) {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  @media screen and (max-width: 450px) {
+    .heading__big {
+      font-size: 120px;
+    }
+    .text-content {
+      max-width: 340px;
+    }
+  }
+}
