@@ -1,4 +1,96 @@
-.technology{
-    background-image: url('../../../public/assets/technology/background-technology-desktop.jpg');
-    min-height: 100vh;
+.technology {
+  background-image: url("../../../public/assets/technology/background-technology-desktop.jpg");
+  min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .container {
+    margin-top: 2rem;
+    padding-left: 3.5rem;
+  }
+
+  .top-bar {
+    color: #fff;
+    padding-left: 1.5rem;
+  }
+
+  .filtered-item {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+
+    @media screen and (max-width: 780px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding-bottom: 2rem;
+    }
+
+    .img-container {
+      width: 350px;
+      height: 280px;
+
+      @media screen and (max-width: 550px) {
+        width: 280px;
+        height: 250px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .text-info {
+    max-width: 350px;
+    color: #fff;
+
+    h1 {
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .filter-tech-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    @media screen and (max-width: 780px) {
+      flex-direction: row;
+    }
+    & > button {
+      position: relative;
+      width: 80px;
+      aspect-ratio: 1/1;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      color: #fff;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      font-family: "Bellefair", serif;
+      font-family: var(--bellefair--fnt);
+      font-size: 32px;
+      font-weight: 400;
+
+      &.active {
+        background-color: #fff;
+        color: black;
+      }
+    }
+  }
 }

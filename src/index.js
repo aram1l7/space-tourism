@@ -5,6 +5,8 @@ import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 import Destination from "./pages/destination/Destination";
 import Crew from "./pages/crew/Crew";
 import Technology from "./pages/technology/Technology";
+import "swiper/css/bundle";
+
 import "./index.scss";
 ReactDOM.render(
   <React.StrictMode>

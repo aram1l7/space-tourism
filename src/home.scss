@@ -51,7 +51,19 @@
       font-size: 120px;
     }
     .text-content {
-      max-width: 340px;
+      max-width: 290px;
     }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .heading__big {
+    font-size: 100px !important;
+  }
+  .heading {
+    font-size: 25px;
+  }
+  .container p {
+    font-size: 1rem;
   }
 }

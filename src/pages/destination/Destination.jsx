@@ -20,7 +20,6 @@ function Destination() {
       .then((data) => setDestinations(data))
       .catch((err) => console.log(err));
   }, []);
-  console.log(destinations);
   useEffect(() => {
     let arr = [];
     if (destinations.length > 1) {
@@ -30,33 +29,17 @@ function Destination() {
     }
   }, [destinations]);
 
-  console.log(filteredDest);
-  const handleSubmit = (e, id) => {
+  const handleClick = (e, id) => {
     e.preventDefault();
     let filterArr = destinations.filter((el) => el.id === id);
     setFilteredDest(filterArr);
     setIsChecked(id);
   };
-  console.log(isChecked);
   return (
     <div className="destination">
       <Navbar />
       <div className="top-bar">
         <h2>01 Pick your destination</h2>
-        <div className="filter-planet-btns">
-          {destinations.map((el) => {
-            return (
-              <button
-                key={el.id}
-                className={isChecked === el.id ? "active" : ""}
-                id={el.id}
-                onClick={(e) => handleSubmit(e, el.id)}
-              >
-                {el.name}
-              </button>
-            );
-          })}
-        </div>
       </div>
       <div className="container">
         {filteredDest &&
@@ -67,6 +50,20 @@ function Destination() {
                   <img src={el.images.png} />
                 </div>
                 <div className="text-info">
+                  <div className="filter-planet-btns">
+                    {destinations.map((el) => {
+                      return (
+                        <button
+                          key={el.id}
+                          className={isChecked === el.id ? "active" : ""}
+                          id={el.id}
+                          onClick={(e) => handleClick(e, el.id)}
+                        >
+                          {el.name}
+                        </button>
+                      );
+                    })}
+                  </div>
                   <h1>{el.name}</h1>
                   <p>{el.description}</p>
                   <hr />
@@ -80,7 +77,6 @@ function Destination() {
                       <span>{el.travel}</span>
                     </div>
                   </div>
-
                 </div>
               </div>
             );
